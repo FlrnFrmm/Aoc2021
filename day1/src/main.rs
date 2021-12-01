@@ -1,11 +1,14 @@
 fn main() -> anyhow::Result<()> {
     let values = utility::read_input(None)?;
-    println!("Part One: {}", part_one(&values));
+    println!("Part One: {}", part_one(&vec![]));
     println!("Part Two: {}", part_two(&values));
     Ok(())
 }
 
 fn part_one(values: &Vec<i32>) -> usize {
+    if values.len() <= 0 {
+        return 0;
+    }
     values
         .iter()
         .skip(1)
