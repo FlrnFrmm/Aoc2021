@@ -1,6 +1,6 @@
 fn main() -> anyhow::Result<()> {
-    let values = utility::read_input(None)?;
-    println!("Part One: {}", part_one(&vec![]));
+    let values = utility::read_input_one(None)?;
+    println!("Part One: {}", part_one(&values));
     println!("Part Two: {}", part_two(&values));
     Ok(())
 }
