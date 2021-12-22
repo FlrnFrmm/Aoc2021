@@ -95,11 +95,17 @@ pub fn read_input_seven(path: Option<&str>) -> anyhow::Result<Vec<i32>> {
         .collect::<anyhow::Result<Vec<i32>>>()
 }
 
-pub fn read_input_eight(path: Option<&str>) -> anyhow::Result<(Vec<String>, Vec<String>)> {
-    let mut iter = read_raw_content(path)?.split(" | ");
-    let input = iter.next().unwrap().split(" ").map(String::from).collect();
-    let output = iter.next().unwrap().split(" ").map(String::from).collect();
-    Ok((input, output))
+pub fn read_input_eight(path: Option<&str>) -> anyhow::Result<Vec<(Vec<String>, Vec<String>)>> {
+    let input = read_raw_content(path)?
+        .lines()
+        .map(|line| {
+            let mut iter = line.split(" | ");
+            let input = iter.next().unwrap().split(" ").map(String::from).collect();
+            let output = iter.next().unwrap().split(" ").map(String::from).collect();
+            (input, output)
+        })
+        .collect();
+    Ok(input)
 }
 
 fn read_raw_content(path: Option<&str>) -> anyhow::Result<String> {

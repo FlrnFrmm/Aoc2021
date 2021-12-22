@@ -1,6 +1,5 @@
 fn main() -> anyhow::Result<()> {
     let input = utility::read_input_seven(None)?;
-    // let input = utility::read_input_seven(Some("./input/example.txt"))?;
     println!("Part One: {}", part_one(&input));
     println!("Part Two: {}", part_two(&input));
     Ok(())

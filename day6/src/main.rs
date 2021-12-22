@@ -4,7 +4,6 @@ use days::DaysIterator;
 use std::collections::{HashMap, HashSet};
 fn main() -> anyhow::Result<()> {
     let input = utility::read_input_six(None)?;
-    // let input = utility::read_input_six(Some("./input/example.txt"))?;
     println!("Part One: {}", part_one(&input));
     println!("Part Two: {}", part_two(&input));
     Ok(())
